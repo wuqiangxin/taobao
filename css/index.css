@@ -1,0 +1,359 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+a {
+  text-decoration: none;
+  color: #666;
+}
+li {
+  list-style: none;
+}
+.clearfix::before,
+.clearfix::after {
+  display: table;
+  content: '';
+}
+.clearfix::after {
+  clear: both;
+}
+.clearfix {
+  zoom: 1;
+}
+body {
+  min-width: 320px;
+  max-width: 750px;
+  width: 3.75rem;
+  margin: 0 auto;
+  background-color: #f4f4f4;
+  height: 1000px;
+}
+html {
+  font-size: 100px;
+}
+.iconfont {
+  font-family: h5index-iconfont;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+  color: #333;
+}
+@media screen and (min-width: 750px) {
+  html {
+    font-size: 100px !important;
+  }
+}
+/* 头部 */
+header {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  z-index: 1000;
+  width: 100%;
+  background-color: #ff852a;
+}
+header .header-hd {
+  width: 100%;
+  padding-right: 0.09rem;
+  padding-left: 0.42rem;
+  padding-top: 0.06rem;
+  padding-bottom: 0.06rem;
+  background-image: url(data:image/png;base64,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);
+  background-size: 0.27rem 0.2rem;
+  background-repeat: no-repeat;
+  background-position: 0.09rem center;
+}
+header .placeholder {
+  display: block;
+  font-size: 0px;
+  background-color: #ff4e22;
+  text-align: center;
+  border-radius: 0.04rem;
+}
+header .placeholder .text {
+  height: 0.25rem;
+  line-height: 0.25rem;
+  font-size: 0.13rem;
+  display: inline-block;
+  color: #f0e0dc;
+}
+header .placeholder .text::before {
+  font-size: 0.2rem;
+  display: inline-block;
+  color: #ffffff;
+  margin-right: 0.05rem;
+  vertical-align: -0.03rem;
+}
+.connont {
+  margin-top: 0.37rem;
+}
+.connont .banner img {
+  width: 100%;
+}
+.connont nav {
+  height: 1.68rem;
+  width: 100%;
+  position: relative;
+  margin-top: -0.13rem;
+  z-index: 100;
+}
+.connont nav .kGYGSu {
+  background-image: url(https://gw.alicdn.com/tfs/TB1vMMwChTpK1RjSZFMXXbG_VXa-1125-30.png);
+  height: 0.1rem;
+  width: 100%;
+  background-size: 100%;
+  margin-bottom: -0.02rem;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.connont nav .ALWfo {
+  display: flex;
+  flex-direction: row;
+  height: 1.56rem;
+  width: 100%;
+  overflow-x: auto;
+  background: #ffffff;
+}
+.connont nav .ALWfo .iLINIY {
+  margin-left: 0.115rem;
+}
+.connont nav .ALWfo .jXFKFG {
+  display: flex;
+  flex-direction: column;
+  -webkit-box-align: center;
+  align-items: center;
+  height: 0.67rem;
+  width: 0.61rem;
+  margin-top: 0.03rem;
+}
+.connont nav .ALWfo .jXFKFG .iEnsRn {
+  height: 48px;
+  width: 61px;
+}
+.connont nav .ALWfo .jXFKFG .hKaypx {
+  font-size: 11px;
+  line-height: 15px;
+  color: #666666;
+  margin-top: 4px;
+}
+.connont nav .ALWfo::-webkit-scrollbar {
+  display: none;
+}
+.connont nav .kXXQUh {
+  display: flex;
+  width: 100%;
+  height: 0.2rem;
+  background-color: #ffffff;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+}
+.connont nav .kXXQUh .dNdKAo {
+  width: 0.5rem;
+  height: 0.03rem;
+  background-color: #d4d8de;
+  border-radius: 0.04rem;
+}
+.connont nav .kXXQUh .dNdKAo .iYxMJl {
+  width: 0.2rem;
+  height: 0.03rem;
+  background-color: #ff6d2a;
+  border-radius: 0.04rem;
+}
+.recommend-container {
+  display: -webkit-flex;
+  display: flex;
+  position: relative;
+  box-sizing: border-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  place-content: flex-start space-between;
+  flex-shrink: 0;
+  overflow: hidden;
+  -webkit-box-pack: justify;
+  -webkit-box-lines: multiple;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding: 0 8.28px;
+  background: #f2f2f2;
+  padding-bottom: 13.248px;
+}
+.recommend-container .recommend-hd {
+  margin-top: 0.2rem;
+  padding: 13.248px 0;
+  width: 100%;
+  text-align: center;
+}
+.recommend-container .recommend-hd .recommend-hd-bg {
+  width: 177.744px;
+  height: 20.976px;
+}
+.recommend-container .recommend-item {
+  height: 287.04px;
+  position: relative;
+  width: 168.784px;
+  box-sizing: border-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  align-content: flex-start;
+  flex-shrink: 0;
+  background: #fff;
+  margin-top: 9.936px;
+  border-radius: 6.624px;
+  overflow: hidden;
+  margin-left: 4.968px;
+  margin-right: 4.968px;
+}
+.recommend-container .recommend-item .recommend-img-wrapper {
+  -webkit-box-align: center;
+  height: 188.784px;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+.recommend-container .recommend-item .recommend-img-wrapper .recommend-img {
+  width: 188.784px;
+  height: 188.784px;
+}
+.recommend-container .recommend-item .recommend-info {
+  padding-left: 11.04px;
+  padding-right: 9.936px;
+  height: 103.776px;
+  text-decoration: none;
+}
+.recommend-container .recommend-item .recommend-info .recommend-title {
+  margin-top: 12.696px;
+  height: 40.848px;
+  position: relative;
+  overflow: hidden;
+  line-height: 20.424px;
+  text-overflow: ellipsis;
+  min-height: 0;
+}
+.recommend-container .recommend-item .recommend-info .recommend-title .recommend-title-p {
+  font-size: 14.352px;
+  color: #333333;
+}
+.recommend-container .recommend-item .recommend-info .recommend-price-box {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  margin-top: 12.144px;
+  height: 22.08px;
+  line-height: 22.08px;
+}
+.recommend-container .recommend-item .recommend-info .recommend-price-box .recommend-sign {
+  font-size: 12.144px;
+  margin-left: getUnit(-6);
+  margin-bottom: getUnit(-1);
+}
+.recommend-container .recommend-item .recommend-info .recommend-price-box .recommend-h {
+  color: #ff5500;
+}
+.recommend-container .recommend-item .recommend-info .recommend-price-box .recommend-price {
+  font-size: 15.456px;
+  line-height: 17.664px;
+  color: #ff5500;
+}
+.recommend-container .recommend-item .recommend-info .recommend-price-box .recommend-payed {
+  font-size: 12.144px;
+  color: #999999;
+  margin-top: 2.208px;
+}
+.kNTSZz {
+  margin-top: 20px;
+  background-color: #4e525e;
+  padding: 20px 9px 56px;
+}
+.kNTSZz .gLeZNY {
+  width: 100%;
+  display: -webkit-flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+}
+.kNTSZz .gLeZNY a {
+  display: inline-block;
+  height: 35px;
+  line-height: 35px;
+  color: #c3c6ca;
+  background-color: #555965;
+  font-size: 14px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #42454d;
+  border-image: initial;
+  padding: 0px 17px;
+  border-radius: 6px;
+}
+.kNTSZz .jOJDzh {
+  font-size: 12px;
+  color: #c3c6ca;
+  width: 100%;
+  margin-top: 20px;
+  height: 20px;
+  line-height: 20px;
+  padding-left: 1.15rem;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAhCAMAAABgOjJdAAAAGXRFW…v7MdDuE3a/JRrCmqwFQ2yV8gmvg/d+aPCMH0GLvB//AgwAo1MTpxsaxVoAAAAASUVORK5CYII=);
+  background-size: auto 18px;
+  background-repeat: no-repeat;
+  background-position: 0.9rem center;
+}
+.kNTSZz .jOJDzh a {
+  color: #c3c6ca;
+}
+.tb-toolbar-container {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 1001;
+  background-color: #ffffff;
+  border-top: 1px solid #e7e7e7;
+  border-bottom: 1px solid #f8f8f8;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  padding: 0 20px;
+  padding-top: 2px;
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.tb-toolbar-container .tb-toolbar-iconfont {
+  font-size: 22px;
+  height: 22px;
+  line-height: 22px;
+  color: #5D656B;
+}
+.tb-toolbar-iconfont {
+  font-family: "tb-toolbar" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.tb-toolbar-iconfont .text {
+  font-size: 12px;
+  -webkit-transform: scale(0.83333333);
+  transform: scale(0.83333333);
+}
